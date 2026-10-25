@@ -11,7 +11,19 @@ Research notes and a Claude skill for designing Temporal Workflow architectures,
 
 ## Using the skill
 
-Copy `skills/temporal-designer/` into `~/.claude/skills/` (personal) or `.claude/skills/` in a project. It triggers on requests such as "design a Temporal workflow for…", "which Temporal pattern…", or "review this workflow design".
+```bash
+# Personal install (~/.claude/skills), no clone needed
+curl -fsSL https://raw.githubusercontent.com/lmquanacs/temporal-design-pattern/main/install.sh | bash
+
+# Into the current project (.claude/skills)
+curl -fsSL https://raw.githubusercontent.com/lmquanacs/temporal-design-pattern/main/install.sh | bash -s -- --project
+
+# From a clone
+./install.sh                    # or: ./install.sh --project /path/to/project
+./install.sh --uninstall        # remove (add --project for a project install)
+```
+
+Re-running replaces the skill and moves the previous copy to `.claude/skill-backups/`. Set `TEMPORAL_DESIGNER_REF` to install a specific branch or tag. Restart Claude Code afterwards. The skill triggers on requests such as "design a Temporal workflow for…", "which Temporal pattern…", or "review this workflow design".
 
 ## Caveats
 
